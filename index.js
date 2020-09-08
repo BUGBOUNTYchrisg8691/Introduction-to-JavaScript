@@ -1,16 +1,17 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
-
-const votingAge = 18;
-if (age >= 18) {
-    console.log(true)
-}
+//let age = 29;
+//const votingAge = 18;
+//if (age >= 18) {
+//    console.log(true)
+//}
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
 let var1;
+let var2 = 8;
 if (var2 < 10) {
     var1 = true;
 } else {
@@ -21,11 +22,11 @@ if (var2 < 10) {
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-parseInt('1999');
+//console.log(parseInt('1999'));
 
 // or
 
-Number('1999');
+//console.log(Number('1999'));
 
 
 
@@ -36,6 +37,8 @@ function multiply(a, b) {
     
     return result
 }
+
+//console.log(multiply(2,3));
 
 
 
@@ -49,6 +52,8 @@ function toDogYears(age) {
     
     return dogYears;
 }
+
+//console.log(toDogYears(7));
 
 
 
@@ -74,22 +79,22 @@ function feedDog(weight, ageInMonths) {
     let foodResult;
     let newWeight = Math.round(weight);
     if (ageInMonths >= 12) {
-        if (weight <= 5) {
-            foodResult = weight * 1.05;
-        } else if (5 < weight <= 10) {
-            foodResult = weight * 1.04;
-        } else if (11 <= weight <= 15) {
-            foodResult = weight * 1.03;
-        } else if (weight > 15) {
-            foodResult = weight * 1.02;
+        if (newWeight <= 5) {
+            foodResult = newWeight * 0.05;
+        } else if (newWeight > 5 && newWeight <= 10) {
+            foodResult = newWeight * 0.04;
+        } else if (newWeight > 10 && newWeight <= 15) {
+            foodResult = newWeight * 0.03;
+        } else if (newWeight > 15) {
+            foodResult = newWeight * 0.02;
         }
     } else if (ageInMonths < 12) {
-        if (2 <= age <= 4) {
-            foodResult = weight * 1.10;
-        } else if (4 < age <= 7) {
-            foodResult = weight * 1.05
-        } else if (7 < age <= 12) {
-            foodResult = weight * 1.04
+        if (2 <= ageInMonths <= 4) {
+            foodResult = newWeight * 0.10;
+        } else if (ageInMonths > 4 && ageInMonths <= 7) {
+            foodResult = newWeight * 0.05
+        } else if (ageInMonths > 7 && ageInMonths <= 12) {
+            foodResult = newWeight * 0.04
         } else {
             return "Your dog is not 2 months old and doesn't get any food, yet. Find the mama or maybe surrogate feed it yourself."
         }
@@ -98,7 +103,7 @@ function feedDog(weight, ageInMonths) {
     return foodResult;
 }
 
-
+console.log(feedDog(15,12));
 
 
 /************************************************************** Task 4 **************************************************************/
