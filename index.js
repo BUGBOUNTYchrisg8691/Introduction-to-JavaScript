@@ -70,12 +70,32 @@ function toDogYears(age) {
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
 
-function feedDog(weight, age) {
-    if (age <= 1) {
-        
-    } else {
-
+function feedDog(weight, ageInMonths) {
+    let foodResult;
+    let newWeight = Math.round(weight);
+    if (ageInMonths >= 12) {
+        if (weight <= 5) {
+            foodResult = weight * 1.05;
+        } else if (5 < weight <= 10) {
+            foodResult = weight * 1.04;
+        } else if (11 <= weight <= 15) {
+            foodResult = weight * 1.03;
+        } else if (weight > 15) {
+            foodResult = weight * 1.02;
+        }
+    } else if (ageInMonths < 12) {
+        if (2 <= age <= 4) {
+            foodResult = weight * 1.10;
+        } else if (4 < age <= 7) {
+            foodResult = weight * 1.05
+        } else if (7 < age <= 12) {
+            foodResult = weight * 1.04
+        } else {
+            return "Your dog is not 2 months old and doesn't get any food, yet. Find the mama or maybe surrogate feed it yourself."
+        }
     }
+
+    return foodResult;
 }
 
 
