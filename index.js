@@ -122,7 +122,6 @@ function rps(userThrow) {
     } else if (comp > 0.66) {
         compThrow = 's'
     }
-    console.log(compThrow)
 
     userThrow = userThrow[0];
     let result;
@@ -187,7 +186,7 @@ function ftToCm(feet) {
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 
 function annoyingSong(annoyanceLevel) {
-    for (i = Number(annoyanceLevel);i !== 0; i--) {
+    for (i = Number(annoyanceLevel); i !== 0; i--) {
         console.log(`${i} bottle of beer on the wall, ${i} bottle of beer, take one down pass it arround ${i - 1} bottles of beer on the wall`)
     }
 }
@@ -259,6 +258,43 @@ function cntVowels(word) {
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
-function playRps(userThrow) {
+function playRps() {
+    let userInput = window.prompt('Rock, Paper, Scissors: ')
+    let userThrow = userInput[0].toLowerCase().charCodeAt().toString(10);
 
-}
+    let comp = Math.random();
+    let compThrow;
+    if (comp <= 0.33) {
+        compThrow = 112;
+    } else if (comp > 0.33 && comp <= 0.66) {
+        compThrow = 114;
+    } else if (comp > 0.66) {
+        compThrow = 115;
+    }
+
+    if (userThrow == compThrow) {
+        alert('Throw again');
+    } else if (userThrow == 112) {
+        if (compThrow == 115) {
+            alert('You lose');
+        } else {
+            alert('You win');
+        };
+    } else if (userThrow == 114) {
+        if (compThrow == 112) {
+            alert('You lose');
+        } else {
+            alert('You win');
+        };
+    } else if (userThrow == 115) {
+        if (compThrow == 114) {
+            alert('You lose');
+        } else {
+            alert('You win');
+        };
+    } else {
+        alert('Invalid choice');
+    };
+};
+
+playRps();
