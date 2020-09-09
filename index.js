@@ -153,19 +153,31 @@ function rps(userThrow) {
     return result;
 }
 
-console.log(rps('paper'));
+//console.log(rps('paper'));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function kmToMi(kiloms) {
+    let result;
+    result = kiloms * 0.621371;
 
+    return result;
+}
 
+//console.log(kmToMi(10));
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
+function ftToCm(feet) {
+    let result;
+    result = feet * 30.48;
 
+    return result;
+}
 
+//console.log(ftToCm(5));
 
 
 
@@ -174,9 +186,13 @@ console.log(rps('paper'));
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 
+function annoyingSong(annoyanceLevel) {
+    for (i = Number(annoyanceLevel);i !== 0; i--) {
+        console.log(`${i} bottle of beer on the wall, ${i} bottle of beer, take one down pass it arround ${i - 1} bottles of beer on the wall`)
+    }
+}
 
-
-
+//annoyingSong(5);
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -187,6 +203,31 @@ console.log(rps('paper'));
 //60s should be D 
 //and anything below 60 should be F
 
+function grader(grade) {
+    let result;
+    let mark = grade.toString();
+    if (mark >= 0 && mark < 60) {
+        result = 'F';
+    } else if (mark >= 60 && mark < 70) {
+        result = 'D';
+    } else if (mark >= 70 && mark < 80) {
+        result = 'C';
+    } else if (mark >= 80 && mark < 90) {
+        result = 'B';
+    } else if (mark >= 90 && mark <= 100) {
+        result = 'A';
+    } else {
+        result = "Wow, somehow you either got less than a zero or more than 100. Either way, I'm dumbfounded!"
+    }
+
+    return result;
+}
+
+//console.log(grader(88));
+//console.log(grader(98));
+//console.log(grader(60));
+//console.log(grader(101));
+//console.log(grader(-1));
 
 
 
@@ -196,10 +237,28 @@ console.log(rps('paper'));
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+function cntVowels(word) {
+    let result;
+    let wordLower = word.toString().toLowerCase();
+    let count = 0;
+    const vowels = 'aeiou';
+    for (i = 0; i < wordLower.length; i++) {
+        if (vowels.includes(wordLower[i])) {
+            count++;
+        }
+    }
 
+    return count;
+}
 
-
+//console.log(cntVowels('strIngcheEse'));
+//console.log(cntVowels('Love'));
+//console.log(cntVowels('Obituary'));
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
+function playRps(userThrow) {
+
+}
