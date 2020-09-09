@@ -34,7 +34,7 @@ if (var2 < 10) {
 
 function multiply(a, b) {
     let result = a * b
-    
+
     return result
 }
 
@@ -49,7 +49,7 @@ function multiply(a, b) {
 function toDogYears(age) {
     let dogYears;
     dogYears = age * 7;
-    
+
     return dogYears;
 }
 
@@ -101,9 +101,9 @@ function feedDog(weight, ageInMonths) {
     }
 
     return foodResult;
-}
+};
 
-console.log(feedDog(15,12));
+//console.log(feedDog(15,12));
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -112,9 +112,48 @@ console.log(feedDog(15,12));
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
+function rps(userThrow) {
+    let comp = Math.random();
+    let compThrow;
+    if (comp <= 0.33) {
+        compThrow = 'r';
+    } else if (comp > 0.33 && comp <= 0.66) {
+        compThrow = 'p';
+    } else if (comp > 0.66) {
+        compThrow = 's'
+    }
+    console.log(compThrow)
 
-  
-  
+    userThrow = userThrow[0];
+    let result;
+    if (userThrow === compThrow) {
+        result = 'Throw again'
+    } else if (userThrow === 'r') {
+        if (compThrow === 's') {
+            result = 'You won!'
+        } else if (compThrow === 'p') {
+            result = 'You lost!'
+        }
+    } else if (userThrow = 'p') {
+        if (compThrow === 'r') {
+            result = 'You won!'
+        } else if (compThrow === 's') {
+            result = 'You lost!'
+        }
+    } else if (userThrow = 's') {
+        if (compThrow === 'p') {
+            result = 'You won!'
+        } else if (compThrow === 'r') {
+            result = 'You lost!'
+        }
+    } else {
+        return 'Not a valid input'
+    }
+
+    return result;
+}
+
+console.log(rps('paper'));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -125,7 +164,7 @@ console.log(feedDog(15,12));
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+
 
 
 
@@ -134,7 +173,7 @@ console.log(feedDog(15,12));
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+
 
 
 
@@ -147,10 +186,10 @@ console.log(feedDog(15,12));
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
 
-  
-  
+
+
+
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
@@ -164,8 +203,3 @@ console.log(feedDog(15,12));
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
-
-
-
